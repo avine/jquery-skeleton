@@ -1,0 +1,129 @@
+.skeleton-screen .skeleton-screen-header {
+    position: relative;
+    opacity: 0;
+    animation: skeletonScreenHeader 0.25s ease-out 0.5s forwards;
+}
+
+.skeleton-screen-icon {
+    float: left;
+    position: relative;
+    top: 0.25rem;
+    margin-right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transform-origin: 100%;
+    animation: skeletonScreenIcon 0.25s ease-out 0.5s forwards;
+}
+
+.skeleton-screen .skeleton-screen-loader {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.65) 50%, rgba(0, 0, 0, 0) 100%);
+    background-repeat: no-repeat;
+    animation: skeletonScreenLoader 1.5s ease-in-out infinite;
+}
+
+.skeleton-screen-text {
+    display: inline-block;
+    position: relative;
+}
+
+.skeleton-screen-text:after {
+    content: "";
+    display: block;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: skeletonScreenText 0.25s ease-out 0.5s forwards;
+}
+
+.skeleton-screen-text:nth-child(4n + 1) {
+    width: 40%;
+    height: 0.9rem;
+    padding: 0.05em 0 0.05em 0;
+}
+
+.skeleton-screen-text:nth-child(4n + 2) {
+    width: 80%;
+    height: 0.6rem;
+    padding: 0.15em 0 0.15em 0;
+}
+
+.skeleton-screen-icon + * > .skeleton-screen-text:nth-child(4n + 2) {
+    width: 65%;
+}
+
+.skeleton-screen-text:nth-child(4n + 3) {
+    width: 85%;
+    height: 0.9rem;
+    padding: 0.05em 0 0.05em 0;
+}
+
+.skeleton-screen-text:nth-child(4n + 4) {
+    width: 70%;
+    height: 0.6rem;
+    padding: 0.15em 0 0.15em 0;
+}
+
+@keyframes skeletonScreenHeader {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes skeletonScreenIcon {
+    0% {
+         transform: scaleX(0);
+    }
+
+    100% {
+         transform: scaleX(1);
+    }
+}
+
+@keyframes skeletonScreenLoader {
+    0% {
+        background-size: 0% 100%;
+        background-position-x: 0;
+    }
+
+    25% {
+        background-size: 50% 100%;
+    }
+
+    50% {
+        background-position-x: 50%;
+    }
+
+    75% {
+        background-size: 50% 100%;
+    }
+
+    100% {
+        background-size: 0% 100%;
+        background-position-x: 100%;
+    }
+}
+
+@keyframes skeletonScreenText {
+    0% {
+        width: 10%;
+        height: 10%;
+        opacity: 0;
+    }
+
+    100% {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+    }
+}

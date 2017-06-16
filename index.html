@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Skeleton screen</title>
+
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+        }
+        body {
+            margin: 0;            
+        }
+
+        p {
+            margin: 0 0 1.5rem 0;
+            line-height: 1.5rem;
+        }
+
+        .wrapper {
+            position: relative;
+            margin: 2rem auto;
+            max-width: 600px;
+            border: 1px solid #ccc;
+        }
+
+        .wrapper header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #ccc;
+            background-color: #eee;
+            font-size: 1.5rem;
+        }
+
+        .wrapper main {
+            padding: 1.5rem;
+        }
+        .wrapper main p:last-child {
+            margin-bottom: 0;
+        }
+
+        .background {
+            display: none;
+            position: absolute;
+            top: 0;
+            opacity: 0.25;
+        }
+
+    </style>
+</head>
+<body>
+
+    <article class="wrapper skeleton-screen">
+        <header class="skeleton-screen-header">
+            <i class="skeleton-screen-icon"></i>
+            <span>
+                <i class="skeleton-screen-text"></i>
+                <i class="skeleton-screen-text"></i>
+            </span>
+            <i class="skeleton-screen-loader"></i>
+        </header>
+        <main>
+            <p>
+                <i class="skeleton-screen-text"></i>
+                <i class="skeleton-screen-text"></i>
+                <i class="skeleton-screen-text"></i>
+                <i class="skeleton-screen-text"></i>
+            </p>
+            <p>
+                <i class="skeleton-screen-text"></i>
+                <i class="skeleton-screen-text"></i>
+                <i class="skeleton-screen-text"></i>
+                <i class="skeleton-screen-text"></i>
+            </p>
+            <p>
+                <i class="skeleton-screen-text"></i>
+                <i class="skeleton-screen-text"></i>
+                <i class="skeleton-screen-text"></i>
+                <i class="skeleton-screen-text"></i>
+            </p>
+        </main>
+
+        <div class="background">
+            <header>
+                Lorem ipsum <br />
+                dolor sit amet
+            </header>
+            <main>
+                <p>
+                    Lorem ipsum dolor sit amet, <br />
+                    consectetur adipiscing elit, sed do eiusmod <br />
+                    tempor incididunt ut labore et dolore magna aliqua. <br />
+                    Ut enim ad minim veniam, quis nostrud...
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, <br />
+                    consectetur adipiscing elit, sed do eiusmod <br />
+                    tempor incididunt ut labore et dolore magna aliqua. <br />
+                    Ut enim ad minim veniam, quis nostrud...
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, <br />
+                    consectetur adipiscing elit, sed do eiusmod <br />
+                    tempor incididunt ut labore et dolore magna aliqua. <br />
+                    Ut enim ad minim veniam, quis nostrud...
+                </p>
+            </main>
+        </div>
+
+    </article>
+
+    <p style="text-align:center;"><button class="toggle">Toggle guides</button></p>
+    <script>
+        var background = document.querySelector('.background'), visible = false;
+        document.querySelector('.toggle').addEventListener('click', function () {
+            visible = !visible;
+            background.style.display = visible ? 'block' : 'none';
+        });
+    </script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-.skeleton-screen .skeleton-screen-header {
+.skeleton-screen-header {
     position: relative;
     opacity: 0;
     animation: skeletonScreenHeader 0.25s ease-out 0.5s forwards;
@@ -17,7 +17,7 @@
     animation: skeletonScreenIcon 0.25s ease-out 0.5s forwards;
 }
 
-.skeleton-screen .skeleton-screen-loader {
+.skeleton-screen-loader {
     position: absolute;
     bottom: 0;
     left: 0;

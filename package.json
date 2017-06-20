@@ -1,0 +1,22 @@
+{
+  "name": "skeleton-screen",
+  "version": "1.0.0",
+  "description": "Show skeleton screen during asynchronous data loading",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avine/skeleton-screen.git"
+  },
+  "author": "Stéphane Francel <contact@avine.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avine/skeleton-screen/issues"
+  },
+  "homepage": "https://github.com/avine/skeleton-screen#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

@@ -7,53 +7,14 @@
     <title>Skeleton screen</title>
 
     <link rel="stylesheet" href="index.css" />
-    <style>
-        html {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 14px;
-        }
-        body {
-            margin: 0;            
-        }
+    <link rel="stylesheet" href="skeletonScreen.css" />
 
-        p {
-            margin: 0 0 1.5rem 0;
-            line-height: 1.5rem;
-        }
-
-        .wrapper {
-            position: relative;
-            margin: 2rem auto;
-            max-width: 600px;
-            border: 1px solid #ccc;
-        }
-
-        .wrapper header {
-            padding: 1.5rem;
-            border-bottom: 1px solid #ccc;
-            background-color: #eee;
-            font-size: 1.5rem;
-        }
-
-        .wrapper main {
-            padding: 1.5rem;
-        }
-        .wrapper main p:last-child {
-            margin-bottom: 0;
-        }
-
-        .background {
-            display: none;
-            position: absolute;
-            top: 0;
-            opacity: 0.25;
-        }
-
-    </style>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="skeletonScreen.js"></script>
 </head>
 <body>
 
-    <article class="wrapper skeleton-screen">
+    <article class="wrapper">
         <header class="skeleton-screen-header">
             <i class="skeleton-screen-icon"></i>
             <span>

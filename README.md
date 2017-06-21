@@ -54,4 +54,6 @@ npm run build
 npm start
 ```
 
+### Screenshot
+
 ![Skeleton screen](./screenshot.png)

@@ -1,86 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Skeleton screen</title>
+  <title>Skeleton screen</title>
 
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="skeletonScreen.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="avnSkeleton/avnSkeleton.css" />
 
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="skeletonScreen.js"></script>
+  <script src="jquery.min.js"></script>
+  <script src="avnPlugin.js"></script>
+  <script src="avnSkeleton/avnSkeleton.js"></script>
 </head>
 <body>
 
-    <article class="wrapper">
-        <header class="skeleton-screen-header">
-            <i class="skeleton-screen-icon"></i>
-            <span>
-                <i class="skeleton-screen-text"></i>
-                <i class="skeleton-screen-text"></i>
-            </span>
-            <i class="skeleton-screen-loader"></i>
-        </header>
-        <main>
+  <article class="wrapper">
+    <header></header>
+    <main></main>
+  </article>
+
+  <p style="text-align:center">
+    <button id="callback">Change step</button>
+  </p>
+
+  <script>
+    var $wrapper = $('.wrapper'), step = 0;
+
+    $('#callback').click(function () {
+      switch (step) {
+        case 0:
+          $wrapper.avnSkeleton(); 
+          step = 1;
+          break;
+
+        case 1:
+          $wrapper.avnSkeleton('remove');
+          step = 2;
+
+          $wrapper.find('> header').append(`
+            Lorem ipsum <br />
+            dolor sit amet`);
+
+          $wrapper.find('> main').append(`
             <p>
-                <i class="skeleton-screen-text"></i>
-                <i class="skeleton-screen-text"></i>
-                <i class="skeleton-screen-text"></i>
-                <i class="skeleton-screen-text"></i>
+              Lorem ipsum dolor sit amet, <br />
+              consectetur adipiscing elit, sed do eiusmod <br />
+              tempor incididunt ut labore et dolore magna aliqua. <br />
+              Ut enim ad minim veniam, quis nostrud...
             </p>
             <p>
-                <i class="skeleton-screen-text"></i>
-                <i class="skeleton-screen-text"></i>
-                <i class="skeleton-screen-text"></i>
-                <i class="skeleton-screen-text"></i>
+              Lorem ipsum dolor sit amet, <br />
+              consectetur adipiscing elit, sed do eiusmod <br />
+              tempor incididunt ut labore et dolore magna aliqua. <br />
+              Ut enim ad minim veniam, quis nostrud...
             </p>
             <p>
-                <i class="skeleton-screen-text"></i>
-                <i class="skeleton-screen-text"></i>
-                <i class="skeleton-screen-text"></i>
-                <i class="skeleton-screen-text"></i>
-            </p>
-        </main>
-
-        <div class="background">
-            <header>
-                Lorem ipsum <br />
-                dolor sit amet
-            </header>
-            <main>
-                <p>
-                    Lorem ipsum dolor sit amet, <br />
-                    consectetur adipiscing elit, sed do eiusmod <br />
-                    tempor incididunt ut labore et dolore magna aliqua. <br />
-                    Ut enim ad minim veniam, quis nostrud...
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, <br />
-                    consectetur adipiscing elit, sed do eiusmod <br />
-                    tempor incididunt ut labore et dolore magna aliqua. <br />
-                    Ut enim ad minim veniam, quis nostrud...
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, <br />
-                    consectetur adipiscing elit, sed do eiusmod <br />
-                    tempor incididunt ut labore et dolore magna aliqua. <br />
-                    Ut enim ad minim veniam, quis nostrud...
-                </p>
-            </main>
-        </div>
-
-    </article>
-
-    <p style="text-align:center;"><button class="toggle">Toggle guides</button></p>
-    <script>
-        var background = document.querySelector('.background'), visible = false;
-        document.querySelector('.toggle').addEventListener('click', function () {
-            visible = !visible;
-            background.style.display = visible ? 'block' : 'none';
-        });
-    </script>
+              Lorem ipsum dolor sit amet, <br />
+              consectetur adipiscing elit, sed do eiusmod <br />
+              tempor incididunt ut labore et dolore magna aliqua. <br />
+              Ut enim ad minim veniam, quis nostrud...
+            </p>`);
+          break;
+      
+        case 2:
+          $wrapper.avnSkeleton('display');
+          step = 1;
+          break;
+      }
+    });
+  </script>
 
 </body>
 </html>

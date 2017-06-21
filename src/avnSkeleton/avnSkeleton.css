@@ -1,76 +1,82 @@
-.skeleton-screen-header {
-    position: relative;
-    opacity: 0;
-    animation: skeletonScreenHeader 0.25s ease-out 0.5s forwards;
+.avn-skeleton > * {
+    animation: avnSkeleton 0.125s ease-out forwards;
 }
 
-.skeleton-screen-icon {
+.avn-skeleton-icon {
     float: left;
     position: relative;
-    top: 0.25rem;
+    top: -0.5rem;
     margin-right: 1.5rem;
     width: 3rem;
     height: 3rem;
     border-radius: 100%;
     background-color: rgba(0, 0, 0, 0.1);
     transform-origin: 100%;
-    animation: skeletonScreenIcon 0.25s ease-out 0.5s forwards;
+    opacity: 0;
+    animation: avnSkeletonIcon 0.25s ease-out 0.5s forwards;
 }
 
-.skeleton-screen-loader {
+.avn-skeleton-icon-lines {
+    top: 0.25rem;
+}
+
+.avn-skeleton-loader {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 0.2rem;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.65) 50%, rgba(0, 0, 0, 0) 100%);
     background-repeat: no-repeat;
-    animation: skeletonScreenLoader 1.5s ease-in-out infinite;
+    animation: avnSkeletonLoader 1.5s ease-in-out infinite;
 }
 
-.skeleton-screen-text {
+.avn-skeleton-text {
     display: inline-block;
     position: relative;
 }
 
-.skeleton-screen-text:after {
+.avn-skeleton-text:after {
     content: "";
     display: block;
     background-color: rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    animation: skeletonScreenText 0.25s ease-out 0.5s forwards;
+    animation: avnSkeletonText 0.25s ease-out 0.5s forwards;
 }
 
-.skeleton-screen-text:nth-child(4n + 1) {
+.avn-skeleton-text:nth-child(4n + 1) {
     width: 40%;
     height: 0.9rem;
     padding: 0.05rem 0 0.05rem 0;
 }
 
-.skeleton-screen-text:nth-child(4n + 2) {
+.avn-skeleton-text:nth-child(4n + 2) {
     width: 80%;
     height: 0.6rem;
     padding: 0.15rem 0 0.15rem 0;
 }
 
-.skeleton-screen-icon + * > .skeleton-screen-text:nth-child(4n + 2) {
-    width: 65%;
-}
-
-.skeleton-screen-text:nth-child(4n + 3) {
+.avn-skeleton-text:nth-child(4n + 3) {
     width: 85%;
     height: 0.9rem;
     padding: 0.05rem 0 0.05rem 0;
 }
 
-.skeleton-screen-text:nth-child(4n + 4) {
+.avn-skeleton-text:nth-child(4n + 4) {
     width: 70%;
     height: 0.6rem;
     padding: 0.15rem 0 0.15rem 0;
 }
 
-@keyframes skeletonScreenHeader {
+.avn-skeleton-header .avn-skeleton-text:nth-child(4n + 1) {
+    width: 55%;
+}
+
+.avn-skeleton-header .avn-skeleton-text:nth-child(4n + 2) {
+    width: 65%;
+}
+
+@keyframes avnSkeleton {
     0% {
         opacity: 0;
     }
@@ -80,17 +86,19 @@
     }
 }
 
-@keyframes skeletonScreenIcon {
+@keyframes avnSkeletonIcon {
     0% {
-         transform: scaleX(0);
+        transform: scaleX(0);
+        opacity: 0;
     }
 
     100% {
-         transform: scaleX(1);
+        transform: scaleX(1);
+        opacity: 1;
     }
 }
 
-@keyframes skeletonScreenLoader {
+@keyframes avnSkeletonLoader {
     0% {
         background-size: 0% 100%;
         background-position-x: 0;
@@ -114,7 +122,7 @@
     }
 }
 
-@keyframes skeletonScreenText {
+@keyframes avnSkeletonText {
     0% {
         width: 10%;
         height: 10%;

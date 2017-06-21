@@ -31,6 +31,16 @@ $('.wrapper').avnSkeleton({
 });
 ```
 
+#### Plugin methods:
+
+```javascript
+// Remove the skeleton when real content is available
+$('.wrapper').avnSkeleton('remove');
+
+// Display again the skeleton
+$('.wrapper').avnSkeleton('display');
+```
+
 ### Installation and build
 
 ```shell
